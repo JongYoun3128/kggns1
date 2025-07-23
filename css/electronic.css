@@ -1,0 +1,141 @@
+.electronic {
+    width: 100%;
+    margin-bottom: 200px;
+}
+.electronic_list {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.electronic_title h2 {
+    font-size: 1.5rem;
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.electronic_title h2 img {
+    margin-right: 10px;
+}
+.electronic_text {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 1.188rem;
+    color: #1b1b1b;
+}
+.electronic_text span {
+    float: right;
+    margin-right: 30px;
+}
+.electronic_hidden {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    border-bottom: 1px solid black;
+    color: #999;
+    padding-left: 20px;
+    box-sizing: border-box;
+    position: relative;
+    display: none;
+}
+.electronic_hidden span {
+    float: right;
+}
+.purple_box img {
+    margin-left: 10px;
+}
+.purple_box {
+    display: block;
+    width: 140px;
+    height: 20px;
+    padding: 15px;
+    line-height: 0;
+    text-align: center;
+    background-color: #44217a;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    font-weight: bold;
+    right: 20px;
+    top: 23px;
+    cursor: pointer;
+}
+.electronic_text_04 {
+    width: 1333px;
+    border-top: none;
+    position: relative;
+}
+.electronic_text_04 span.arrow {
+    position: absolute;
+    right: 14px;
+}
+.left {
+    position: absolute;
+    right: 0px;
+}
+.electronic_hidden_04 {
+    width: 100%;
+    line-height: 1.7;
+    box-sizing: border-box;
+    padding: 20px;
+}
+@media (max-width: 768px) {
+    .electronic_list {
+        width: 90%;
+        gap: 50px;
+    }
+    .electronic_title h2 {
+        font-size: 1.2rem;
+    }
+    .electronic_text {
+        height: auto;
+        line-height: 1.5;
+        padding: 15px;
+        font-size: 1rem;
+    }
+    .electronic_text span {
+        margin-right: 10px;
+    }
+    .electronic_text_04 {
+        width: 100%;
+    }
+    .electronic_text_04 span {
+        padding-right: 5px;
+    }
+    .electronic_text_04 span.arrow {
+        position: absolute;
+        right: 7px;
+    }
+    .left {
+        position: absolute;
+        right: 10px;
+    }
+    .electronic_hidden {
+        height: auto;
+        line-height: 1.5;
+        padding: 15px;
+    }
+    .purple_box {
+        position: static;
+        float: none;
+        width: 25%;
+        box-sizing: border-box;
+    }
+    .purple_box img {
+        display: none;
+    }
+    .electronic_hidden_04 {
+        padding: 15px;
+    }
+    .electronic_hidden_04 span {
+        float: right;
+        margin-right: 10px;
+    }
+}

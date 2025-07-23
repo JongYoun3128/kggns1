@@ -1,0 +1,87 @@
+body {
+    background-color: #f4f6fb;
+}
+.login_box {
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+}
+.login_title {
+    margin-bottom: 24px;
+    color: #222;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.login_id {
+    width: 250px;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border: 1px solid #f0f0f0;
+    background: #f8fafc;
+}
+.login_password {
+    width: 250px;
+    height: 40px;
+    padding-left: 10px;
+    border: 1px solid #f0f0f0;
+    background: #f8fafc;
+}
+input {
+    border: none;
+    color: black;
+}
+.input_submit {
+    cursor: pointer;
+    width: 260px;
+    height: 40px;
+    border-radius: 10px;
+    background: #4f8cff;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    transition: 0.4s;
+}
+.input_submit:hover {
+    opacity: 1;
+}
+.input_join {
+    cursor: pointer;
+    width: 260px;
+    height: 40px;
+    border-radius: 10px;
+    background: #e36f21;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: 0.4s;
+}
+.input_join:hover {
+    opacity: 1;
+}
+.check_box {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 65px;
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #999;
+}
+.login_text {
+    text-align: right;
+    margin-right: 70px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.login_text p:hover {
+    text-decoration: underline;
+}

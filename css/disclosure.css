@@ -1,0 +1,153 @@
+.disclosure {
+    margin-bottom: 200px;
+}
+.disclosure_box {
+    width: 70%;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.disclosure_select {
+    width: 160px;
+    height: 40px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border-color: #99999953;
+    margin-right: 15px;
+    color: #999;
+}
+input {
+    border: none;
+}
+.disclosure_input {
+    width: 300px;
+    height: 38px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: #99999953;
+}
+.disclosure_black_box {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+.disclosure_table {
+    width: 70%;
+    margin: 0 auto;
+}
+.disclosure_01 td {
+    background-color: #f7f7f9;
+    border-top: 2px solid black;
+    font-size: 1rem;
+    color: #0d0d0d;
+    font-weight: 500;
+}
+.table_01 {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #99999953;
+}
+
+.table_02 {
+    width: 1300px;
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #99999953;
+}
+.table_03 {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #99999953;
+}
+.table_04 {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #99999953;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.disclosure_02 td {
+    color: #666;
+}
+.disclosure_02 td:hover {
+    background-color: #f7f7f9;
+}
+@media (max-width: 768px) {
+    .disclosure_box {
+        width: 90%;
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+    .disclosure_select {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 80%;
+    }
+    .disclosure_input {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    .disclosure_black_box {
+        width: 80%;
+    }
+    .disclosure_table {
+        width: 90%;
+    }
+    .disclosure_table table,
+    .disclosure_table thead,
+    .disclosure_table tbody,
+    .disclosure_table th,
+    .disclosure_table td,
+    .disclosure_table tr {
+        display: block;
+    }
+    .disclosure_table .disclosure_01 {
+        display: none;
+    }
+    .disclosure_table tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+    .disclosure_table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        text-align: center;
+        padding-left: 80px;
+        white-space: normal;
+        height: auto;
+        line-height: 1.5;
+    }
+    .disclosure_table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+    .table_01,
+    .table_02,
+    .table_03,
+    .table_04 {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

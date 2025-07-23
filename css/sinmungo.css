@@ -1,0 +1,214 @@
+.eth_tap {
+    width: 100%;
+}
+
+.eth_tap .tap_list {
+    width: 700px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.25rem;
+}
+
+.eth_tap .tap_list li {
+    width: 250px;
+    margin: 0 10px;
+    text-align: center;
+    padding: 20px 10px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.eth_tap .tap_list li:hover {
+    background-color: #44217a;
+    color: #fff;
+}
+
+.eth_tap .tap_list li:last-child {
+    background-color: #44217a;
+    color: #fff;
+}
+
+.container {
+    width: 70%;
+    padding: 0 10px;
+    margin: 0 auto 130px;
+    position: relative;
+}
+
+.numbered-list {
+    margin: 20px 0;
+    padding-left: 0;
+}
+
+.numbered-item {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #888;
+    margin-left: 25px;
+}
+
+.numbered-item .number {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.intro-text p {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #000;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #44217a;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.complaint-type > ul > li {
+    position: relative;
+    margin-left: 35px;
+    line-height: 1.8;
+    color: #888;
+}
+
+.complaint-type > ul > li::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    background-color: #2978cc;
+    display: inline-block;
+    position: absolute;
+    left: -10px;
+    top: 12px;
+    box-sizing: border-box;
+}
+
+.complaint-type ul {
+    list-style: none;
+}
+
+.process-step {
+    line-height: 1.8;
+    margin-left: 25px;
+    color: #888;
+}
+
+.notice-table {
+    width: 100%;
+    margin: 20px 0 40px;
+    border: 1px solid #ccc;
+}
+
+.notice-table tr + tr {
+    border-top: 1px solid #ccc;
+}
+
+.notice-table th,
+.notice-table td {
+    color: #000;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.notice-table th {
+    border-right: 1px solid #ccc;
+    background: #f5f5f5;
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+
+.notice-table tr:last-child td,
+.notice-table tr:last-child th {
+    border-bottom: none;
+}
+
+.submit-btn {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn {
+    position: absolute;
+    left: 10px;
+    background: #44217a;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    border: 1px solid #fff;
+}
+
+@media (max-width: 768px) {
+    .eth_tap .tap_list {
+        width: 90%;
+        flex-direction: column;
+        font-size: 1rem;
+        box-sizing: border-box;
+        padding-right: 20px;
+    }
+    .eth_tap .tap_list li {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .container {
+        width: 90%;
+    }
+    .intro-text p {
+        font-size: 1rem;
+    }
+    .notice-table,
+    .notice-table thead,
+    .notice-table tbody,
+    .notice-table th,
+    .notice-table td,
+    .notice-table tr {
+        display: block;
+    }
+    .notice-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .notice-table tr {
+        margin-bottom: 15px;
+    }
+    .notice-table td {
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+    .notice-table td:before {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+    .notice-table th {
+        border-right: none;
+    }
+    .btn {
+        position: static;
+        display: block;
+        width: 100%;
+        font-size: 1rem;
+    }
+    .submit-btn {
+        margin-top: 20px;
+    }
+}

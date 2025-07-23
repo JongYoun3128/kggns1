@@ -1,0 +1,169 @@
+.container {
+    width: 70%;
+    padding: 0 10px;
+    margin: 0 auto 130px;
+}
+
+.section {
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.section-header {
+    background-image: url('../images/before_img.png');
+    background-repeat: no-repeat;
+    display: block;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    padding: 0 0 0 30px;
+    margin: 0 0 15px 0;
+}
+
+.section-content {
+    padding: 25px;
+}
+
+.logo-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.logo-info h3 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.logo-info p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+
+.kg-logo {
+    width: 210px;
+    height: 150px;
+}
+
+.symbol-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.symbol-mark {
+    width: 210px;
+    height: 281px;
+}
+
+.symbol-mark::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: 40px;
+}
+
+.symbol-mark::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 40px;
+}
+
+.slogan-section {
+    text-align: center;
+}
+
+.think-kg-great {
+    font-size: 36px;
+    color: #ccc;
+    margin: 30px 0;
+    letter-spacing: 2px;
+}
+
+.think-kg-great .kg {
+    color: #667eea;
+    font-weight: bold;
+}
+
+.slogan-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.slogan-text {
+    text-align: left;
+}
+
+.slogan-text p {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.slogan-text p:first-child {
+    color: #333;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.slogan-image {
+    background-image: url('../images/ci_slide_img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.kg {
+    font-size: 18px;
+    color: #44217a;
+}
+
+.grigo {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .section-header {
+        font-size: 1.2rem;
+    }
+    .logo-section,
+    .symbol-section,
+    .slogan-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .kg-logo,
+    .symbol-mark {
+        margin: 0 auto;
+    }
+    .slogan-image {
+        height: 300px;
+    }
+    .think-kg-great {
+        font-size: 24px;
+    }
+}

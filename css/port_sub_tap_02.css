@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.port_tap {
+    width: 100%;
+}
+
+.port_tap .tap_list {
+    width: 700px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.25rem;
+}
+
+.port_tap .tap_list li {
+    width: 250px;
+    margin: 0 10px;
+    text-align: center;
+    padding: 20px 10px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+.port_tap .tap_list li a {
+    display: block;
+}
+.port_tap .tap_list li:hover {
+    background-color: #44217a;
+    color: #fff;
+}
+
+.port_tap .tap_list li:last-child {
+    background-color: #44217a;
+    color: #fff;
+}
+.sub_tap_02_details {
+    width: 1280px;
+    margin: 50px auto;
+    font-size: 1.7rem;
+}
+.sub_tap_02_list_01 {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub_tap_02_list_01 li {
+    width: 33%;
+    margin-right: 20px;
+}
+.sub_tap_02_list_01 li img {
+    width: 100%;
+    height: auto;
+}
+.sub_tap_02_details {
+    margin-top: 50px;
+}
+.sub_tap_02_details_box {
+    margin-top: 50px;
+}
+
+.sub_tap_02_details_box_list ul {
+    font-size: 20px;
+    margin: 15px 30px;
+}
+
+.sub_tap_02_details_box_list ul li {
+    margin-top: 15px;
+}
+
+.sub_tap_02_details_box .detail_title {
+    font-size: 1.7rem;
+    margin-top: 35px;
+}
+
+@media (max-width: 768px) {
+    .port_tap .tap_list {
+        width: 90%;
+        flex-direction: column;
+        font-size: 1rem;
+        box-sizing: border-box;
+        padding-right: 20px;
+    }
+    .port_tap .tap_list li {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .sub_tap_02_details {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+    .sub_tap_02_list_01 {
+        flex-direction: column;
+    }
+    .sub_tap_02_list_01 li {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .sub_tap_02_details_box_list ul {
+        font-size: 1rem;
+        margin: 15px 0;
+    }
+    .sub_tap_02_details_box .detail_title {
+        font-size: 1.2rem;
+    }
+}

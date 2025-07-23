@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.transit_tap {
+    width: 100%;
+}
+
+.transit_tap .tap_list {
+    width: 500px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.25rem;
+}
+
+.transit_tap .tap_list li {
+    width: 250px;
+    margin: 0 10px;
+    text-align: center;
+    padding: 20px 10px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.transit_tap .tap_list li:hover {
+    background-color: #44217a;
+    color: #fff;
+}
+
+.transit_tap .tap_list li:last-child {
+    background-color: #44217a;
+    color: #fff;
+}
+.transit_detail_text {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 1.313rem;
+    line-height: 1.4;
+    color: #1b1b1b;
+    text-align: center;
+    font-weight: bold;
+}
+.transit_detail_box {
+    width: 1280px;
+    margin: 50px auto;
+    font-size: 1.7rem;
+}
+
+.transit_detail_box .transit_img_box {
+    display: flex;
+}
+.transit_detail_box .transit_img_box li {
+    width: 50%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.transit_detail_box .transit_img_box li img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .transit_tap .tap_list {
+        width: 90%;
+        flex-direction: column;
+        font-size: 1rem;
+        box-sizing: border-box;
+        padding-right: 20px;
+    }
+    .transit_tap .tap_list li {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .transit_detail_box {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+    .transit_detail_box .transit_img_box {
+        flex-direction: column;
+    }
+    .transit_detail_box .transit_img_box li {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+}

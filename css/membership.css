@@ -1,0 +1,109 @@
+body {
+    background-color: #f4fbfb;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+#wrap {
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    margin: 50px auto;
+}
+#membership {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 30px;
+    box-sizing: border-box;
+}
+.memburship_title {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.input_box {
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+input {
+    background-color: #f8fafc;
+    border-radius: 5px;
+    width: 300px;
+    height: 25px;
+    margin-left: 25px;
+}
+.mamber_id {
+    width: 230px;
+}
+.mamber_pw {
+    width: 300px;
+    margin-left: 10px;
+}
+.check_box {
+    position: relative;
+}
+.pw_check {
+    position: absolute;
+    display: block;
+    width: 100px;
+    box-sizing: border-box;
+    left: -30px;
+    top: 5px;
+}
+.mamber_pw_check {
+    margin-left: 78px;
+    width: 300px;
+}
+.mamber_vehicle_type_box {
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.mamber_vehicle_type {
+    width: 150px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.member_type_box {
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.member_type {
+    width: 150px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.membership_btn_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.membership_btn_box li {
+    margin: 10px auto;
+}
+.mebership_btn {
+    color: #fff;
+    display: block;
+    width: 200px;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    background-color: rgb(79, 140, 255);
+    margin-bottom: 50px;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.back_green {
+    background-color: rgb(227, 111, 33);
+}
+
+select {
+    margin-left: 10px;
+    width: 100px;
+}

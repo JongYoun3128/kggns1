@@ -1,0 +1,104 @@
+.hero-image {
+    width: 100%;
+    height: 320px;
+    background-image: url('../images/ceo_img.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 70%;
+    padding: 0 10px;
+    margin: 0 auto 130px;
+}
+
+.content {
+    padding: 60px 80px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.content-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 30px;
+}
+
+.company-intro {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.company-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.message-text {
+    font-size: 15px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.closing {
+    font-size: 15px;
+    color: #888;
+    margin: 40px 0;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 60px;
+    padding-right: 40px;
+}
+
+.signature-company {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.signature-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 2px;
+}
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 5px;
+        margin: 0 auto 60px;
+    }
+    .hero-image {
+        height: 180px;
+    }
+    .content {
+        padding: 24px 5px;
+    }
+    .content-title {
+        font-size: 15px;
+    }
+    .company-intro,
+    .message-text,
+    .closing {
+        font-size: 13px;
+    }
+    .signature {
+        margin-top: 30px;
+        padding-right: 0;
+        text-align: center;
+    }
+    .signature-company {
+        font-size: 12px;
+    }
+    .signature-name {
+        font-size: 15px;
+    }
+}

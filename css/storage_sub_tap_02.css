@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.storage_tap {
+    width: 100%;
+}
+
+.storage_tap .tap_list {
+    width: 900px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.25rem;
+}
+
+.storage_tap .tap_list li {
+    width: 250px;
+    margin: 0 10px;
+    text-align: center;
+    padding: 20px 10px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+.storage_tap .tap_list li a {
+    display: block;
+}
+.storage_tap .tap_list li:hover {
+    background-color: #44217a;
+    color: #fff;
+}
+
+.storage_tap .tap_list li:nth-child(3) {
+    background-color: #44217a;
+    color: #fff;
+}
+
+.storage_details {
+    width: 70%;
+    margin: 50px auto;
+    font-size: 1.7rem;
+    text-align: center;
+}
+.storage_details .storage_detail_text {
+    width: 500px;
+    margin: 30px auto;
+    font-size: 1.313rem;
+    line-height: 1.4;
+    color: #1b1b1b;
+}
+.storage_main_img {
+    width: 100%;
+    margin: 50px 0;
+}
+.detail_title {
+    display: block;
+    text-align: left;
+    font-size: 1.5rem;
+    color: #333333;
+    font-weight: 600;
+    margin: 0 0 25px 0;
+    line-height: 1.4;
+}
+.detail_list {
+    padding-left: 30px;
+    text-align: left;
+    color: #1b1b1b;
+    font-size: 1.188rem;
+    line-height: 1.6;
+    padding: 0 0 0 30px;
+}
+.detail_list li {
+    margin-bottom: 30px;
+    color: #333333;
+    font-weight: bold;
+}
+.detail_list li span {
+    padding-left: 20px;
+    font-weight: 500;
+    color: #1b1b1b;
+}
+.detail_img {
+    display: flex;
+}
+.detail_img li {
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .storage_tap .tap_list {
+        width: 90%;
+        flex-direction: column;
+        font-size: 1rem;
+        box-sizing: border-box;
+        padding-right: 20px;
+    }
+    .storage_tap .tap_list li {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .storage_details {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+    .storage_details .storage_detail_text {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .detail_title {
+        font-size: 1.2rem;
+    }
+    .detail_list {
+        padding-left: 15px;
+        font-size: 1rem;
+    }
+    .detail_img {
+        flex-direction: column;
+    }
+    .detail_img li {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+}

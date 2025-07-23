@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.port_tap {
+    width: 100%;
+}
+
+.port_tap .tap_list {
+    width: 700px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.25rem;
+}
+
+.port_tap .tap_list li {
+    width: 250px;
+    margin: 0 10px;
+    text-align: center;
+    padding: 20px 10px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+.port_tap .tap_list li a {
+    display: block;
+}
+.port_tap .tap_list li:hover {
+    background-color: #44217a;
+    color: #fff;
+}
+
+.port_tap .tap_list li:first-child {
+    background-color: #44217a;
+    color: #fff;
+}
+
+.port_detail {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.port_detail p {
+    width: 800px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.port_detail .detail_img {
+    margin: 50px auto;
+    display: block;
+    width: 80%;
+}
+.detail_title {
+    margin-left: 70px;
+    font-size: 1.7rem;
+}
+.port_detail .detail_list {
+    width: 800px;
+    padding: 30px 120px;
+    font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .port_tap .tap_list {
+        width: 90%;
+        flex-direction: column;
+        font-size: 1rem;
+        box-sizing: border-box;
+        padding-right: 20px;
+    }
+    .port_tap .tap_list li {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .port_detail {
+        width: 100%;
+    }
+    .port_detail p {
+        width: 90%;
+        font-size: 1rem;
+    }
+    .detail_title {
+        margin-left: 5%;
+        font-size: 1.2rem;
+    }
+    .port_detail .detail_list {
+        width: 90%;
+        padding: 20px 0;
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+}

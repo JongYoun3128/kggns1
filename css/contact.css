@@ -1,0 +1,72 @@
+.contact {
+    width: 100%;
+    margin-bottom: 50px;
+}
+.contact_scrap {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+.contact_title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.contact_title img {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+td {
+    width: 400px;
+    height: 60px;
+    line-height: 60px;
+    border: 1px solid #888;
+    text-align: center;
+    font-size: 1rem;
+}
+.table_01 td {
+    background-color: #fafafa;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.table_02 td {
+    color: #666666;
+    font-weight: 600;
+}
+.rowspan {
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .contact_scrap {
+        width: 90%;
+    }
+    .contact_title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .scrap_table table {
+        margin: 0 auto;
+        border: 0;
+    }
+    .scrap_table tr.table_01 {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .scrap_table td {
+        display: block;
+        width: 100% !important;
+        text-align: right !important;
+        border: none !important;
+        border-bottom: 1px dotted #ccc !important;
+        padding: 10px !important;
+        line-height: 1.5 !important;
+        height: auto !important;
+    }
+    .scrap_table td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+}

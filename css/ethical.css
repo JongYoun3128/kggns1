@@ -1,0 +1,143 @@
+.container {
+    width: 70%;
+    padding: 0 10px;
+    margin: 0 auto 130px;
+}
+
+.eth_tap {
+    width: 100%;
+}
+
+.eth_tap .tap_list {
+    width: 700px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.25rem;
+}
+
+.eth_tap .tap_list li {
+    width: 250px;
+    margin: 0 10px;
+    text-align: center;
+    padding: 20px 10px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.eth_tap .tap_list li:hover {
+    background-color: #44217a;
+    color: #fff;
+}
+
+.eth_tap .tap_list li:first-child {
+    background-color: #44217a;
+    color: #fff;
+}
+
+.toc-section {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.toc-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.toc-item {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 40px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    color: #333;
+}
+
+.article-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 30px 0 15px 0;
+    color: #333;
+}
+
+.article-content {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #888;
+}
+
+.numbered-list {
+    margin: 20px 0;
+    padding-left: 0;
+}
+
+.numbered-item {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #888;
+    margin-left: 20px;
+}
+
+.numbered-item .number {
+    font-weight: bold;
+    margin-right: 8px;
+    display: inline-block;
+    width: 25px;
+    text-align: right;
+}
+
+.bullet-point {
+    position: relative;
+    margin-left: 35px;
+}
+.bullet-point::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    background-color: #2978cc;
+    display: inline-block;
+    position: absolute;
+    left: -10px;
+    top: 12px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .eth_tap .tap_list {
+        width: 90%;
+        flex-direction: column;
+        font-size: 1rem;
+        box-sizing: border-box;
+        padding-right: 20px;
+    }
+    .eth_tap .tap_list li {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .toc-item,
+    .article-content,
+    .numbered-item {
+        font-size: 0.9rem;
+    }
+    .section-title {
+        font-size: 1.2rem;
+    }
+    .article-title {
+        font-size: 1rem;
+    }
+}

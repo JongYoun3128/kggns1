@@ -1,0 +1,61 @@
+.photo {
+    margin-bottom: 200px;
+}
+.photo_box {
+    width: 70%;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.photo_select {
+    width: 160px;
+    height: 40px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border-color: #99999953;
+    margin-right: 15px;
+    color: #999;
+}
+input {
+    border: none;
+}
+.photo_input {
+    width: 300px;
+    height: 38px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: #99999953;
+}
+.photo_black_box {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+@media (max-width: 768px) {
+    .photo_box {
+        width: 90%;
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+    .photo_select {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 80%;
+    }
+    .photo_input {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    .photo_black_box {
+        width: 80%;
+    }
+}

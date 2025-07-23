@@ -1,0 +1,144 @@
+.employment {
+    margin-bottom: 200px;
+}
+.employment_box {
+    width: 70%;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.employment_select {
+    width: 160px;
+    height: 40px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border-color: #99999953;
+    margin-right: 15px;
+    color: #999;
+}
+input {
+    border: none;
+}
+.employment_input {
+    width: 300px;
+    height: 38px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: #99999953;
+}
+.employment_black_box {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+.employment_table {
+    width: 70%;
+    margin: 0 auto;
+}
+.employment_01 td {
+    background-color: #f7f7f9;
+    border-top: 2px solid black;
+    font-size: 1rem;
+    color: #0d0d0d;
+    font-weight: 500;
+}
+.table_01 {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #99999953;
+}
+
+.table_02 {
+    width: 1300px;
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #99999953;
+}
+.table_03 {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #99999953;
+}
+.employment_02 td {
+    border-bottom: 1px solid #99999953;
+    text-align: center;
+    height: 130px;
+    line-height: 130px;
+    color: #666;
+    font-weight: 300;
+    font-size: 1rem;
+}
+.employment_02 td:hover {
+    background-color: #f7f7f9;
+}
+@media (max-width: 768px) {
+    .employment_box {
+        width: 90%;
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+    .employment_select {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 80%;
+    }
+    .employment_input {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    .employment_black_box {
+        width: 80%;
+    }
+    .employment_table {
+        width: 90%;
+    }
+    .employment_table table,
+    .employment_table thead,
+    .employment_table tbody,
+    .employment_table th,
+    .employment_table td,
+    .employment_table tr {
+        display: block;
+    }
+    .employment_table .employment_01 {
+        display: none;
+    }
+    .employment_table tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+    .employment_table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 0;
+        text-align: center !important;
+        white-space: normal;
+        height: auto;
+        line-height: 1.5;
+        padding: 20px;
+    }
+    .table_01,
+    .table_02,
+    .table_03 {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 0;
+        text-align: center !important;
+    }
+}
