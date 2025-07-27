@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>물류 관리 시스템 - 로그인</title>
+    <link rel="stylesheet" href="../../css/login.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div class="home_btn" id="home_btn">
+        <a href="../../home.html"><img src="../../images/home-button.png" alt="" /></a>
+    </div>
+
+    <!-- 로그인컨테이너 -->
+    <div id="login"></div>
+
+    <div class="admin-layout hidden" id="admin-container">
+
+        <!-- 사이드바 -->
+        <div id="aside"></div>
+
+
+        <main class="main-content">
+
+            <!-- 컴포넌트 영역 시작 -->
+            <div id="header"></div>
+            <div id="dashboard"></div>
+            <div id="stock"></div>
+            <div id="order"></div>
+            <div id="setting"></div>
+            <!-- 컴포넌트 영역 끝 -->
+
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>
+
+<script>
+    class SuperVisor {
+        constructor(components = []) {
+            this.components = components;
+            window.getData = this.getData;
+            this.initLoad();
+        }
+
+        async initLoad() {
+            this.components.forEach((item, idx) => {
+                this.renderComponent(item);
+                this.loadScript(item);
+            });
+        }
+
+        async renderComponent(컴포넌트파일명, 타켓노드아이디) {
+            const temp = await fetch(`./components/${컴포넌트파일명}.html`);
+            const res = temp.text();
+            const html = await res;
+
+            const target = document.querySelector(`#${컴포넌트파일명 || 타켓노드아이디}`);
+            target.innerHTML = html;
+        }
+
+        async loadScript(컴포넌트파일명) {
+            const script = document.createElement('script');
+            script.src = `../js/modules/${컴포넌트파일명}.js`;
+            script.async = true;
+            document.head.appendChild(script);
+
+            script.onerror = () => {
+                console.error(`${컴포넌트파일명}이 존재하지 않습니다`)
+            }
+        }
+
+        async getData(path, param, method = 'GET') {
+            const url = 'http://localhost:23000' + path;
+
+            const _res = await fetch(url, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                method,
+                body: JSON.stringify(param),
+            });
+
+            const res = await _res.json();
+
+            return res;
+        }
+    }
+
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        const components = [
+            'aside',
+            'dashboard',
+            'header',
+            'login',
+            'order',
+            'setting',
+            'stock'
+        ];
+
+        window.supervisor = new SuperVisor(components);
+    })
+</script>
