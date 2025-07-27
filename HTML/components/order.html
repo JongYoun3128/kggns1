@@ -1,0 +1,59 @@
+<section id="section-orders" class="admin-section hidden">
+ <h2>주문 관리</h2>
+ <div class="orders-actions">
+  <button class="order-add-btn" onclick="openOrderAddModal()">
+   + 주문 추가
+  </button>
+ </div>
+ <div class="table-container">
+  <table class="data-table">
+   <thead>
+    <tr>
+     <th>주문번호</th>
+     <th>고객명</th>
+     <th>상태</th>
+     <th>일자</th>
+     <th>상세</th>
+     <th>삭제</th>
+    </tr>
+   </thead>
+   <tbody id="orders-table-body">
+    <!-- JS로 데모 데이터 렌더링 -->
+   </tbody>
+  </table>
+ </div>
+ <!-- 주문 추가 모달 -->
+ <div id="order-add-modal" class="modal hidden">
+  <div class="modal-content">
+   <h3>주문 추가</h3>
+   <form id="order-add-form">
+    <input type="text" id="add-order-ono" hidden />
+
+    <label>주문번호</label>
+    <input type="text" id="add-order-no" required />
+
+    <label>고객명</label>
+    <input type="text" id="add-customer" required />
+
+    <label>상태</label>
+    <select id="add-status" required>
+     <option value="처리중">처리중</option>
+     <option value="완료">완료</option>
+     <option value="보류">보류</option>
+    </select>
+
+    <label>일자</label>
+    <input type="date" id="add-date" required />
+
+    <div class="modal-actions">
+     <button type="submit" class="modal-save">
+      추가
+     </button>
+     <button type="button" class="modal-cancel" onclick="closeOrderAddModal()">
+      취소
+     </button>
+    </div>
+   </form>
+  </div>
+ </div>
+</section>

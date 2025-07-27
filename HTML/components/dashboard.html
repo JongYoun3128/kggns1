@@ -1,0 +1,91 @@
+<section id="section-dashboard" class="admin-section">
+ <div class="dashboard-header">
+  <input type="text" class="search-bar" placeholder="검색어를 입력하세요" />
+  <div class="header-actions">
+   <button class="preview-btn">미리보기</button>
+   <button class="logout-btn" onclick="logout()">
+    나가기
+   </button>
+  </div>
+ </div>
+ <div class="dashboard-main">
+  <div class="dashboard-left">
+   <div class="dashboard-graph-box">
+    <h3>입출고/방문자 요약</h3>
+    <div class="graph-row">
+     <canvas id="mainBarChart" height="120"></canvas>
+     <canvas id="mainLineChart" height="120"></canvas>
+    </div>
+    <div class="site-summary">
+     <div>
+      오늘 신규회원:
+      <span id="today-new-user">2</span>
+     </div>
+     <div>
+      오늘 방문자:
+      <span id="today-visit">15</span>
+     </div>
+     <div>
+      오늘 출고:
+      <span id="today-out">98</span>
+     </div>
+     <div>
+      주간 평균 방문자:
+      <span id="week-avg-visit">12</span>
+     </div>
+    </div>
+   </div>
+   <div class="dashboard-accordion">
+    <button class="accordion-btn" onclick="toggleAccordion('alert')">
+     오늘의 알림
+     <span class="section-badge">2</span>
+    </button>
+    <div class="accordion-panel" id="accordion-alert">
+     <ul class="dashboard-list" id="today-alert-list"></ul>
+     <div class="accordion-detail-cards" id="alert-detail-cards"></div>
+    </div>
+    <button class="accordion-btn" onclick="toggleAccordion('content')">
+     인기 콘텐츠
+    </button>
+    <div class="accordion-panel" id="accordion-content">
+     <ul class="dashboard-list" id="popular-content-list"></ul>
+     <div class="accordion-detail-cards" id="content-detail-cards"></div>
+    </div>
+    <button class="accordion-btn" onclick="toggleAccordion('news')">
+     소식
+    </button>
+    <div class="accordion-panel" id="accordion-news">
+     <ul class="dashboard-list" id="news-list"></ul>
+     <div class="accordion-detail-cards" id="news-detail-cards"></div>
+    </div>
+   </div>
+  </div>
+  <div class="dashboard-right">
+   <div class="admin-card">
+    <div class="admin-avatar"></div>
+    <div class="admin-info">
+     <div class="admin-name">관리자</div>
+     <div class="admin-email">
+      admin@company.com
+     </div>
+     <div class="admin-role">global</div>
+     <div class="admin-status">
+      APP: 미설치 | 도메인: 사용 | SSL: 적용 |
+      SMS: 0건
+     </div>
+    </div>
+   </div>
+   <div class="admin-settings">
+    <h4>운영진 설정</h4>
+    <div class="admin-users">
+     <span class="admin-user-icon"></span>
+     <span class="admin-user-icon"></span>
+    </div>
+   </div>
+   <div class="admin-memo">
+    <h4>메모</h4>
+    <textarea placeholder="관리자들과 공유할 메모를 남겨주세요"></textarea>
+   </div>
+  </div>
+ </div>
+</section>
