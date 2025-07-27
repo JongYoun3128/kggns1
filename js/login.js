@@ -1,6 +1,4 @@
-// 간단한 데모용 ID/PW (실제 서비스에서는 서버 인증 필요)
-const DEMO_ID = 'admin';
-const DEMO_PW = '1234';
+// const { resolveConfig } = require('prettier');
 
 const loginForm = document.getElementById('login-form');
 const loginContainer = document.getElementById('login-container');
@@ -8,11 +6,40 @@ const adminContainer = document.getElementById('admin-container');
 const loginError = document.getElementById('login-error');
 const home = document.getElementById('home_btn');
 
-loginForm.addEventListener('submit', function (e) {
+const getData = async (path, param, method = 'GET') => {
+    const url = 'http://localhost:23000' + path;
+
+    const _res = await fetch(url, {
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        method,
+        body: JSON.stringify(param),
+    });
+
+    const res = await _res.json();
+
+    return res;
+};
+setTimeout(() => {
+    document.getElementById('userId').value = 'test';
+    document.getElementById('userPw').value = '1234';
+    document.querySelector('#loginbtn').click();
+}, 500);
+
+loginForm.addEventListener('submit', async function (e) {
     e.preventDefault();
     const id = document.getElementById('userId').value.trim();
     const pw = document.getElementById('userPw').value.trim();
-    if (id === DEMO_ID && pw === DEMO_PW) {
+
+    const param = {
+        memberId: id,
+        memberPw: pw,
+    };
+
+    const res = await getData('/api/v1/member/login', param, 'POST');
+
+    if (res?.data) {
         loginContainer.classList.add('hidden');
         adminContainer.classList.remove('hidden');
         loginError.textContent = '';
@@ -23,7 +50,7 @@ loginForm.addEventListener('submit', function (e) {
     }
 });
 
-function showSection(section) {
+async function showSection(section) {
     document
         .querySelectorAll('.admin-section')
         .forEach((sec) => sec.classList.add('hidden'));
@@ -66,112 +93,68 @@ function logout() {
 }
 
 // 데모용 재고 데이터 (부서명, 직위 추가)
-let inventoryData = [
-    {
-        code: 'A1001',
-        name: '노트북',
-        qty: 120,
-        location: 'A-01',
-        dept: 'IT',
-        position: '사원',
-    },
-    {
-        code: 'B2032',
-        name: '마우스',
-        qty: 340,
-        location: 'B-12',
-        dept: '구매',
-        position: '대리',
-    },
-    {
-        code: 'C3300',
-        name: '키보드',
-        qty: 210,
-        location: 'C-07',
-        dept: 'IT',
-        position: '과장',
-    },
-    {
-        code: 'D4002',
-        name: '모니터',
-        qty: 55,
-        location: 'D-03',
-        dept: '물류',
-        position: '부장',
-    },
-];
+let inventoryData = [];
+let ordersData = [];
 
-let ordersData = [
-    {
-        no: '20240601-01',
-        customer: '홍길동',
-        status: '대기',
-        date: '2024-06-01',
-    },
-    {
-        no: '20240601-02',
-        customer: '이순신',
-        status: '처리중',
-        date: '2024-06-01',
-    },
-    {
-        no: '20240601-03',
-        customer: '김철수',
-        status: '완료',
-        date: '2024-06-01',
-    },
-];
+async function renderInventoryTable() {
+    // 조회
+    const res = await getData('/api/v1/stock/getStocks');
+    inventoryData = [...res.data];
 
-function renderInventoryTable() {
     const tbody = document.getElementById('inventory-table-body');
     tbody.innerHTML = '';
     inventoryData.forEach((item, idx) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-      <td>${item.code}</td>
-      <td>${item.name}</td>
-      <td>${item.qty}</td>
-      <td>${item.location}</td>
-      <td>${item.dept}</td>
-      <td>${item.position}</td>
+      <td>${item.stockCode}</td>
+      <td>${item.stockName}</td>
+      <td>${item.stockCounts}</td>
+      <td>${item.stockPlace}</td>
+      <td>${item.stockDegree}</td>
+      <td>${item.stockPosition}</td>
       <td><button class="table-edit-btn" onclick="openInventoryEditModal(${idx})">수정</button></td>
-      <td><button class="table-delete-btn" onclick="deleteInventory(${idx})">삭제</button></td>
+      <td><button class="table-delete-btn" onclick="deleteInventory(${item.sno})">삭제</button></td>
     `;
         tbody.appendChild(tr);
     });
 }
 
 // 재고 수정 모달 관련
-window.openInventoryEditModal = function (idx) {
+const openInventoryEditModal = function (idx) {
+    const target = inventoryData[idx];
+
     const modal = document.getElementById('inventory-edit-modal');
     modal.classList.remove('hidden');
-    document.getElementById('edit-index').value = idx;
-    document.getElementById('edit-name').value = inventoryData[idx].name;
-    document.getElementById('edit-qty').value = inventoryData[idx].qty;
-    document.getElementById('edit-location').value =
-        inventoryData[idx].location;
-    document.getElementById('edit-dept').value = inventoryData[idx].dept;
-    document.getElementById('edit-position').value =
-        inventoryData[idx].position;
+    document.getElementById('edit-index').value = target.sno;
+    document.getElementById('edit-code').value = target.stockCode;
+    document.getElementById('edit-name').value = target.stockName;
+    document.getElementById('edit-qty').value = target.stockCounts;
+    document.getElementById('edit-location').value = target.stockPlace;
+    document.getElementById('edit-dept').value = target.stockDegree;
+    document.getElementById('edit-position').value = target.stockPosition;
 };
+
 window.closeInventoryModal = function () {
     document.getElementById('inventory-edit-modal').classList.add('hidden');
 };
 document
     .getElementById('inventory-edit-form')
-    .addEventListener('submit', function (e) {
+    .addEventListener('submit', async function (e) {
         e.preventDefault();
-        const idx = document.getElementById('edit-index').value;
-        inventoryData[idx].name = document.getElementById('edit-name').value;
-        inventoryData[idx].qty = parseInt(
-            document.getElementById('edit-qty').value,
-            10,
-        );
-        inventoryData[idx].location =
-            document.getElementById('edit-location').value;
-        inventoryData[idx].dept = document.getElementById('edit-dept').value;
-        inventoryData[idx].position =
-            document.getElementById('edit-position').value;
+
+        let param = {};
+
+        param.stockCode = document.getElementById('edit-code').value;
+        param.sno = document.getElementById('edit-index').value;
+        param.stockName = document.getElementById('edit-name').value;
+        param.stockCount = ~~document.getElementById('edit-qty').value;
+        param.stockPlace = document.getElementById('edit-location').value;
+        param.stockDegree = document.getElementById('edit-dept').value;
+
+        param.stockPosition = document.getElementById('edit-position').value;
+
+        await getData('/api/v1/stock/modifyStock', param, 'POST');
+
         renderInventoryTable();
         closeInventoryModal();
     });
@@ -185,7 +168,7 @@ window.closeInventoryAddModal = function () {
 };
 document
     .getElementById('inventory-add-form')
-    .addEventListener('submit', function (e) {
+    .addEventListener('submit', async function (e) {
         e.preventDefault();
         const code = document.getElementById('add-code').value;
         const name = document.getElementById('add-name').value;
@@ -193,14 +176,32 @@ document
         const location = document.getElementById('add-location').value;
         const dept = document.getElementById('add-dept').value;
         const position = document.getElementById('add-position').value;
-        inventoryData.push({ code, name, qty, location, dept, position });
+
+        const param = {
+            stockCode: code,
+            stockName: name,
+            stockCounts: qty,
+            stockPlace: location,
+            stockDegree: dept,
+            stockPosition: position,
+        };
+
+        const res = await getData('/api/v1/stock/registStock', param, 'POST');
+
         renderInventoryTable();
         closeInventoryAddModal();
         this.reset();
     });
-window.deleteInventory = function (idx) {
+const deleteInventory = async (sno) => {
     if (confirm('정말 삭제하시겠습니까?')) {
-        inventoryData.splice(idx, 1);
+        const res = await getData('/api/v1/stock/deleteStock', sno, 'POST');
+
+        if (res?.data) {
+            alert('삭제 성공');
+        } else {
+            alert('삭제 실패');
+        }
+
         renderInventoryTable();
     }
 };
@@ -214,35 +215,51 @@ window.closeOrderAddModal = function () {
 };
 document
     .getElementById('order-add-form')
-    .addEventListener('submit', function (e) {
+    .addEventListener('submit', async function (e) {
         e.preventDefault();
-        const no = document.getElementById('add-order-no').value;
-        const customer = document.getElementById('add-customer').value;
-        const status = document.getElementById('add-status').value;
-        const date = document.getElementById('add-date').value;
-        ordersData.push({ no, customer, status, date });
+
+        let param = {};
+        param.orderNo = document.getElementById('add-order-no').value;
+        param.orderName = document.getElementById('add-customer').value;
+        param.orderStatus = document.getElementById('add-status').value;
+        param.orderDate = document.getElementById('add-date').value;
+
+        await getData('/api/v1/order/registOrder', param, 'POST');
+
         renderOrdersTable();
         closeOrderAddModal();
         this.reset();
     });
-window.deleteOrder = function (idx) {
+
+const deleteOrder = async (ono) => {
     if (confirm('정말 삭제하시겠습니까?')) {
-        ordersData.splice(idx, 1);
+        const res = await getData('/api/v1/order/deleteOrder', ono, 'POST');
+
+        if (res?.data) {
+            alert('삭제되었습니다');
+        } else {
+            alert('삭제실패');
+        }
+
         renderOrdersTable();
     }
 };
-function renderOrdersTable() {
+async function renderOrdersTable() {
     const tbody = document.getElementById('orders-table-body');
     tbody.innerHTML = '';
+
+    const res = await getData('/api/v1/order/getOrders');
+    ordersData = [...res.data];
+
     ordersData.forEach((item, idx) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-      <td>${item.no}</td>
-      <td>${item.customer}</td>
-      <td>${item.status}</td>
-      <td>${item.date}</td>
+      <td>${item.orderNo}</td>
+      <td>${item.orderName}</td>
+      <td>${item.orderStatus}</td>
+      <td>${item.orderDate}</td>
       <td><button class="table-detail-btn" disabled>상세</button></td>
-      <td><button class="table-delete-btn" onclick="deleteOrder(${idx})">삭제</button></td>
+      <td><button class="table-delete-btn" onclick="deleteOrder(${item.ono})">삭제</button></td>
     `;
         tbody.appendChild(tr);
     });
